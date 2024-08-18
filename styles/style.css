@@ -36,3 +36,161 @@ ul,
 ol {
   list-style: none;
 }
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inline-size: 100%;
+  max-inline-size: 1200px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  inline-size: 100%;
+  max-inline-size: 1140px;
+  block-size: 100%;
+  max-block-size: 534px;
+  gap: 30px;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /*justify-content: space-between;
+  align-items: stretch;  Как сделать так, чтобы */
+  gap: 16px;
+  inline-size: 100%;
+  max-inline-size: 711px;
+  block-size: 100%;
+  max-block-size: 456px;
+}
+
+.result__video-container {
+  position: relative;
+  inline-size: 100%;
+  max-inline-size: 711px;
+  block-size: 100%;
+  max-block-size: 402px;
+  /*padding-block-end: 16px;*/
+}
+
+.result__video {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  block-size: 100%;
+  max-block-size: 54px;
+}
+
+.search-form__fieldset-title {
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  text-align: left;  
+}
+
+.search-form__submit-button {
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.6px;
+  text-align: center;
+}
+
+.content__details {
+  display: flex;
+  flex-direction: column;
+  inline-size: 100%;
+  max-inline-size: 399px;
+  block-size: 100%;
+  max-block-size: 534px;
+  justify-content: flex-end;
+  gap: 26px;
+}
+
+.title {
+  font-family: Oswald;
+  font-size: 75px;
+  font-weight: 700;
+  line-height: 70.5px;
+  text-transform: uppercase;
+  text-align: left; 
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__list {
+  position: relative;
+  block-size: 100%;
+  max-block-size: 298px;
+  /*margin-block-start: 26px; i`ve changed into the gap*/
+  overflow: scroll;
+}
+
+.content__list-item:not(:last-child) {
+  margin-block-end: 22px;
+}
+
+.content__card-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.content__video-card-title {
+  font-family: Oswald;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
+  text-transform: uppercase;
+  padding-block-end: 11px;
+}
+
+.content__video-card-description {
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 16.2px;
+  text-align: left;
+}
+
+.content__video-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.content__video-card-thumbnail {
+  inline-size: 100%;
+  max-inline-size: 198px;
+  block-size: 100%;
+  max-block-size: 107px;
+  padding: 2px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+}
+
+.preloader-template {
+  position: relative;
+}
