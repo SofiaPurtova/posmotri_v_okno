@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 html {
   block-size: 100%;
 }
@@ -63,7 +73,7 @@ ol {
   justify-content: flex-end;
   /*justify-content: space-between;
   align-items: stretch;  Как сделать так, чтобы */
-  gap: 16px;
+  gap: 18px;
   inline-size: 100%;
   max-inline-size: 711px;
   block-size: 100%;
@@ -75,7 +85,7 @@ ol {
   inline-size: 100%;
   max-inline-size: 711px;
   block-size: 100%;
-  max-block-size: 402px;
+  max-block-size: 386px;
   /*padding-block-end: 16px;*/
 }
 
@@ -91,9 +101,13 @@ ol {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: flex-end;
   block-size: 100%;
   max-block-size: 54px;
+}
+
+.search-form__fieldset {
+  border: none;
 }
 
 .search-form__fieldset-title {
@@ -101,7 +115,85 @@ ol {
   font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
+  color: #fff;
+  text-align: left;
+}
+
+.search-form__label {
+  width: fit-content;
+  cursor: pointer;
+}
+
+input {
+ font-family: inherit;
+ background-color: transparent;
+ color: rgb(255 255 255 / 0.7);
+ border: none;
+ margin: 1px;
+ padding: 1px;
+ inline-size: fit-content;
+ border-block-start: 1px solid rgb(255 255 255 / 0.7);
+ border-block-end: 1px solid rgb(255 255 255 / 0.7);
+}
+
+input::placeholder {
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
   text-align: left;  
+}
+
+input:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.search-form__textfield {
+  inline-size: 225px;
+  block-size: 27px;
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  text-align: left;
+  
+  color: rgb(255 255 255 / 0.7);
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.search-form__pseudo-checkbox {
+  display: inline-block;
+  inline-size: 20px;
+  block-size: 20px;
+  border: 1px solid #fff;
+  background-color: transparent;
+}
+
+input[type="checkbox"]:checked + span {
+  inline-size: 17px;
+  block-size: 17px;
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+  background-color: #fff;
+} /* выбранный */
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 2px;  
+}
+
+.search-form__label > span:hover {
+  text-decoration: underline;
+}
+
+.search-form__label-text {
+  appearance: none;
 }
 
 .search-form__submit-button {
@@ -110,6 +202,21 @@ ol {
   font-weight: 700;
   line-height: 21.6px;
   text-align: center;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: rgb(255 255 255 / 0.3);
+ /* outline: none;*/
+}
+
+button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+button:hover {
+  text-decoration: underline;
 }
 
 .content__details {
@@ -141,16 +248,37 @@ ol {
   block-size: 100%;
   max-block-size: 298px;
   /*margin-block-start: 26px; i`ve changed into the gap*/
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .content__list-item:not(:last-child) {
-  margin-block-end: 22px;
+  margin-block-end: 26px;
+}
+
+.content__list-item:hover {
+  text-decoration: underline;
+}
+
+.content__list-item:focus {
+  border: none;
+}
+
+.content__list-item:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.content__video-card:active {
+  background-color: rgb(255 255 255 / 0.3);
 }
 
 .content__card-link {
+  display: block;
+  margin: 2px;
   text-decoration: none;
   color: #fff;
+  cursor: pointer;
 }
 
 .content__video-card-title {
@@ -193,4 +321,25 @@ ol {
 
 .preloader-template {
   position: relative;
+}
+
+.button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  border: 1px solid #fff;
+  background-color: transparent;
+}
+
+.search-form__submit-button {
+  inline-size: 194px;
+  block-size: 34px;
+}
+
+.more-button {
+  flex-grow: 1;
+  inline-size: 399px;
+  block-size: 34px;
 }
