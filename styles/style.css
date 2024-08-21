@@ -26,6 +26,11 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inline-size: 100%;
+  max-inline-size: 1200px;
 }
 
 h1,
@@ -47,14 +52,6 @@ ol {
   list-style: none;
 }
 
-.page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  inline-size: 100%;
-  max-inline-size: 1200px;
-}
-
 .content {
   display: flex;
   flex-direction: row;
@@ -63,7 +60,6 @@ ol {
   inline-size: 100%;
   max-inline-size: 1140px;
   block-size: 100%;
-  max-block-size: 534px;
   gap: 30px;
 }
 
@@ -71,13 +67,10 @@ ol {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  /*justify-content: space-between;
-  align-items: stretch;  Как сделать так, чтобы */
   gap: 18px;
   inline-size: 100%;
   max-inline-size: 711px;
   block-size: 100%;
-  max-block-size: 456px;
 }
 
 .result__video-container {
@@ -102,8 +95,7 @@ ol {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  block-size: 100%;
-  max-block-size: 54px;
+  /*block-size: 100%;*/
 }
 
 .search-form__fieldset {
@@ -111,12 +103,13 @@ ol {
 }
 
 .search-form__fieldset-title {
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
   color: #fff;
   text-align: left;
+  padding-block-end: 5px;
 }
 
 .search-form__label {
@@ -124,6 +117,7 @@ ol {
   cursor: pointer;
 }
 
+/* Имеется ввиду поле ввода для названия города */
 input {
  font-family: inherit;
  background-color: transparent;
@@ -137,7 +131,7 @@ input {
 }
 
 input::placeholder {
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
@@ -152,7 +146,7 @@ input:focus-visible {
 .search-form__textfield {
   inline-size: 225px;
   block-size: 27px;
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
@@ -164,7 +158,19 @@ input:focus-visible {
 .search-form__checkbox-list {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /*padding-block-start: 5px;*/
+  padding-block-end: 10px;
   gap: 15px;
+}
+
+.search-form__label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
 }
 
 .search-form__pseudo-checkbox {
@@ -176,8 +182,9 @@ input:focus-visible {
 }
 
 input[type="checkbox"]:checked + span {
-  inline-size: 17px;
-  block-size: 17px;
+  inline-size: 18px;
+  block-size: 18px;
+  margin: 1px;
   outline: 1px solid #fff;
   outline-offset: 2px;
   background-color: #fff;
@@ -185,29 +192,43 @@ input[type="checkbox"]:checked + span {
 
 .search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
-  outline-offset: 2px;  
+  outline-offset: 2px;
+  margin: 1px;
 }
 
 .search-form__label > span:hover {
   text-decoration: underline;
 }
 
-.search-form__label-text {
+input {
   appearance: none;
 }
 
-.search-form__submit-button {
-  font-family: Fira Sans Condensed;
+.button {
+  cursor: pointer;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-weight: 700;
   line-height: 21.6px;
   text-align: center;
-  cursor: pointer;
+  color: inherit;
+  border: 1px solid #fff;
+  background-color: transparent;
+}
+
+.search-form__submit-button {
+  inline-size: 194px;
+  block-size: 34px;
+}
+
+.more-button {
+  flex-grow: 1;
+  inline-size: 399px;
+  block-size: 34px;
 }
 
 button:active {
   background-color: rgb(255 255 255 / 0.3);
- /* outline: none;*/
 }
 
 button:focus-visible {
@@ -223,15 +244,14 @@ button:hover {
   display: flex;
   flex-direction: column;
   inline-size: 100%;
-  max-inline-size: 399px;
+  max-inline-size: 394px;
   block-size: 100%;
-  max-block-size: 534px;
   justify-content: flex-end;
   gap: 26px;
 }
 
 .title {
-  font-family: Oswald;
+  font-family: 'Oswald', sans-serif;
   font-size: 75px;
   font-weight: 700;
   line-height: 70.5px;
@@ -247,20 +267,20 @@ button:hover {
   position: relative;
   block-size: 100%;
   max-block-size: 298px;
-  /*margin-block-start: 26px; i`ve changed into the gap*/
-  overflow-y: scroll;
-  overflow-x: hidden;
+  max-inline-size: 394px;
+  overflow-y: auto;
 }
 
 .content__list-item:not(:last-child) {
   margin-block-end: 26px;
 }
 
-.content__list-item:hover {
+.content__card-link:hover {
   text-decoration: underline;
 }
 
 .content__list-item:focus {
+  outline: none;
   border: none;
 }
 
@@ -281,8 +301,26 @@ button:hover {
   cursor: pointer;
 }
 
+.content__video-card-description-container {
+  max-inline-size: 200px;
+  max-block-size: 101px;
+  overflow: hidden;
+}
+
+.content__video-card-description-container h2 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.content__video-card-description-container p {
+  overflow: hidden;
+  white-space: wrap;
+  text-overflow: ellipsis;
+}
+
 .content__video-card-title {
-  font-family: Oswald;
+  font-family: 'Oswald', sans-serif;
   font-size: 30px;
   font-weight: 700;
   line-height: 30px;
@@ -292,7 +330,7 @@ button:hover {
 }
 
 .content__video-card-description {
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 16.2px;
@@ -307,7 +345,7 @@ button:hover {
 
 .content__video-card-thumbnail {
   inline-size: 100%;
-  max-inline-size: 198px;
+  max-inline-size: 194px;
   block-size: 100%;
   max-block-size: 107px;
   padding: 2px;
