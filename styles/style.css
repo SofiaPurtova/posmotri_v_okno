@@ -15,22 +15,23 @@
 }
 
 html {
+  inline-size: 100%;
   block-size: 100%;
 }
 
 .page {
-  block-size: 100%;
-  max-block-size: 534px;
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*margin: 0 auto;*/
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  inline-size: 100%;
-  max-inline-size: 1200px;
+  /*inline-size: 100%;
+  inline-size: 1200px;*/
+  block-size: 100%;
+  /*block-size: 534px;*/
 }
 
 h1,
@@ -58,8 +59,9 @@ ol {
   justify-content: space-between;
   align-items: flex-end;
   inline-size: 100%;
-  max-inline-size: 1140px;
+  max-inline-size: 1200px;
   block-size: 100%;
+  max-block-size: 534px;
   gap: 30px;
 }
 
