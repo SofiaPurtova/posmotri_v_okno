@@ -56,12 +56,12 @@ ol {
 .content {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-end;
   inline-size: 100%;
   max-inline-size: 1200px;
-  block-size: 100%;
-  max-block-size: 534px;
+  /*block-size: 100%;
+  max-block-size: 534px;*/
   gap: 30px;
 }
 
@@ -163,7 +163,7 @@ input:focus-visible {
   justify-content: space-between;
   align-items: center;
   /*padding-block-start: 5px;*/
-  padding-block-end: 10px;
+  padding-block-end: 7px;
   gap: 15px;
 }
 
@@ -195,7 +195,7 @@ input[type="checkbox"]:checked + span {
 .search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 2px;
-  margin: 1px;
+  /*margin: 1px;*/
 }
 
 .search-form__label > span:hover {
@@ -269,6 +269,7 @@ button:hover {
   position: relative;
   block-size: 100%;
   max-block-size: 298px;
+  inline-size: 100%;
   max-inline-size: 394px;
   overflow-y: auto;
 }
@@ -281,17 +282,17 @@ button:hover {
   text-decoration: underline;
 }
 
-.content__list-item:focus {
+.content__card-link:focus {
   outline: none;
   border: none;
 }
 
-.content__list-item:has(:focus-visible) {
+.content__card-link:has(:focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 2px;
 }
 
-.content__video-card:active {
+.content__card-link:active {
   background-color: rgb(255 255 255 / 0.3);
 }
 
@@ -305,19 +306,13 @@ button:hover {
 
 .content__video-card-description-container {
   max-inline-size: 200px;
-  max-block-size: 101px;
+  /*max-block-size: 101px;*/
   overflow: hidden;
 }
 
 .content__video-card-description-container h2 {
   overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.content__video-card-description-container p {
-  overflow: hidden;
-  white-space: wrap;
   text-overflow: ellipsis;
 }
 
@@ -380,6 +375,6 @@ button:hover {
 
 .more-button {
   flex-grow: 1;
-  inline-size: 399px;
+  inline-size: 368px;
   block-size: 34px;
 }
