@@ -86,8 +86,8 @@ ol {
 
 .result__video {
   display: block;
-  inline-size: 100%;
-  block-size: 100%;
+  inline-size: 711px;
+  block-size: 386px;
   object-fit: cover;
   object-position: center;
 }
@@ -248,7 +248,7 @@ button:hover {
   inline-size: 100%;
   max-inline-size: 394px;
   block-size: 100%;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 26px;
 }
 
@@ -267,8 +267,9 @@ button:hover {
 
 .content__list {
   position: relative;
-  block-size: 100%;
-  max-block-size: 298px;
+  /*block-size: 100%;
+  max-block-size: 298px;*/
+  block-size: 298px;
   inline-size: 100%;
   max-inline-size: 394px;
   overflow-y: auto;
@@ -287,7 +288,7 @@ button:hover {
   border: none;
 }
 
-.content__card-link:has(:focus-visible) {
+.content__card-link:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 2px;
 }
